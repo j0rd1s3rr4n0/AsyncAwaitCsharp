@@ -1,0 +1,5 @@
+C:\Users\Propietario\source\repos\AsyncCsharp\bin\Release\net6.0-windows\publish\AsyncCsharp.exe
+C:\Users\Propietario\source\repos\AsyncCsharp\bin\Release\net6.0-windows\publish\AsyncCsharp.dll
+C:\Users\Propietario\source\repos\AsyncCsharp\bin\Release\net6.0-windows\publish\AsyncCsharp.deps.json
+C:\Users\Propietario\source\repos\AsyncCsharp\bin\Release\net6.0-windows\publish\AsyncCsharp.runtimeconfig.json
+C:\Users\Propietario\source\repos\AsyncCsharp\bin\Release\net6.0-windows\publish\AsyncCsharp.pdb
