@@ -2,7 +2,6 @@ C:\Users\Propietario\source\repos\AsyncCsharp\bin\Debug\net6.0-windows\AsyncCsha
 C:\Users\Propietario\source\repos\AsyncCsharp\bin\Debug\net6.0-windows\AsyncCsharp.deps.json
 C:\Users\Propietario\source\repos\AsyncCsharp\bin\Debug\net6.0-windows\AsyncCsharp.runtimeconfig.json
 C:\Users\Propietario\source\repos\AsyncCsharp\bin\Debug\net6.0-windows\AsyncCsharp.dll
-C:\Users\Propietario\source\repos\AsyncCsharp\bin\Debug\net6.0-windows\AsyncCsharp.pdb
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.csproj.AssemblyReference.cache
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.Form1.resources
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.csproj.GenerateResource.cache
@@ -12,6 +11,5 @@ C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsha
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.csproj.CoreCompileInputs.cache
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.dll
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\refint\AsyncCsharp.dll
-C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.pdb
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\AsyncCsharp.genruntimeconfig.cache
 C:\Users\Propietario\source\repos\AsyncCsharp\obj\Debug\net6.0-windows\ref\AsyncCsharp.dll
