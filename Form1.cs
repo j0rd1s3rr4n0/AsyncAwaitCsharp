@@ -69,26 +69,35 @@ namespace AsyncCsharp
             {
                 if ( folder_num == 1)
                 {
+
                     foreach (string d in Directory.GetDirectories(Folder))
                     {
-                        foreach (string s in Directory.GetFiles(d))
+                        try
                         {
-                            string V = s.ToString();
-                            if (cb_show_path_collection.CheckState.ToString() != "Checked")
-                            {
-                                V = s.Split('\\')[s.Split('\\').Count() - 1].ToString();
-                            }
-                            if (folder_num == 1)
-                            {
-                                directories_one.Add(V);
-                            }
-                            else if (folder_num == 2)
-                            {
-                                directories_two.Add(V);
-                            }
-                            System.Threading.Thread.Sleep(1);
+                            foreach (string s in Directory.GetFiles(d))
+                                {
+                            
+                                string V = s.ToString();
+                                if (cb_show_path_collection.CheckState.ToString() != "Checked")
+                                {
+                                    V = s.Split('\\')[s.Split('\\').Count() - 1].ToString();
+                                }
+                                if (folder_num == 1)
+                                {
+                                    directories_one.Add(V);
+                                }
+                                else if (folder_num == 2)
+                                {
+                                    directories_two.Add(V);
+                                }
+                                System.Threading.Thread.Sleep(1);
+                             }
+                         }
+                        catch (Exception e)
+                        {
+
                         }
-                    }
+        }
                 }
                 else if (folder_num == 2)
                 {
