@@ -51,25 +51,83 @@ namespace AsyncCsharp
 
         private async Task getFileFromDirectories(string Folder, int folder_num)
         {
-            try{
-                foreach (string d in Directory.GetDirectories(Folder))
+            if (folder_num == 1)
+            {
+                lock (directories_one)
                 {
-                    foreach (string s in Directory.GetFiles(d))
+                    directories_one.Clear();
+                }
+            }
+            else if (folder_num == 2)
+            {
+                lock (directories_two)
+                {
+                    directories_two.Clear();
+                }
+            }
+            try
+            {
+                if ( folder_num == 1)
+                {
+                    foreach (string d in Directory.GetDirectories(Folder))
                     {
-                        string V = s.ToString();
-                        if (cb_show_path_collection.CheckState.ToString() != "Checked") { 
-                            V = s.Split('\\')[s.Split('\\').Count() - 1].ToString();
-                        }
-                        if (folder_num == 1)
+                        foreach (string s in Directory.GetFiles(d))
                         {
-                            directories_one.Add(V);
+                            string V = s.ToString();
+                            if (cb_show_path_collection.CheckState.ToString() != "Checked")
+                            {
+                                V = s.Split('\\')[s.Split('\\').Count() - 1].ToString();
+                            }
+                            if (folder_num == 1)
+                            {
+                                directories_one.Add(V);
+                            }
+                            else if (folder_num == 2)
+                            {
+                                directories_two.Add(V);
+                            }
+                            System.Threading.Thread.Sleep(1);
                         }
-                        else if (folder_num == 2)
-                        {
-                            directories_two.Add(V);
-                        }
-                        System.Threading.Thread.Sleep(1);
                     }
+                }
+                else if (folder_num == 2)
+                {
+                    string[] directories = Directory.GetDirectories(Folder);
+
+                    Parallel.ForEach(directories, d =>
+                    {
+                        try
+                        {
+                            string[] files = Directory.GetFiles(d);
+                            Parallel.ForEach(files, s =>
+                            {
+                                string V = s.ToString();
+                                if (cb_show_path_collection.CheckState.ToString() != "Checked")
+                                {
+                                    V = s.Split('\\')[s.Split('\\').Count() - 1].ToString();
+                                }
+                                if (folder_num == 1)
+                                {
+                                    lock (directories_one)
+                                    {
+                                        directories_one.Add(V);
+                                    }
+                                }
+                                else if (folder_num == 2)
+                                {
+                                    lock (directories_two)
+                                    {
+                                        directories_two.Add(V);
+                                    }
+                                }
+                            });
+                        }
+                        catch(Exception e)
+                        {
+                            
+                        }
+                    });
+
                 }
                 if (folder_num == 1)
                 {
@@ -167,7 +225,7 @@ namespace AsyncCsharp
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            tv_CarpetaOne.Text = cb_show_path_collection.CheckState.ToString();
+            //tv_CarpetaOne.Text = cb_show_path_collection.CheckState.ToString();
         }
     }
 }
